@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagination 分页表格</title>
+
+    <script src="../static/scripts/jquery.min.js"  th:src="@{/scripts/jquery.min.js}" type="text/javascript"></script>
+    <script src="../static/scripts/miniui/miniui.js"  th:src="@{/scripts/miniui/miniui.js}" type="text/javascript"></script>
+    <script src="../static/scripts/boot.js"  th:src="@{/scripts/boot.js}" type="text/javascript"></script>
+    <script src="../static/scripts/ColumnsMenu.js"  th:src="@{/scripts/ColumnsMenu.js}" type="text/javascript"></script>
+    <link   href="../static/scripts/miniui/themes/default/miniui.css" th:src="@{/scripts/miniui/themes/default/miniui.css}" rel="stylesheet" type="text/css"/>
+    <link   href="../demo/demo.css" th:src="@{/demo/demo.css}" rel="stylesheet" type="text/css"/>
+
+</head>
+<body >
+
+<div id="datagrid1" class="mini-datagrid" style="width:100%;height:250px;"
+     url="/list"
+     idField="id" allowResize="true"
+     sizeList="[20,30,50,100]" pageSize="20"
+     showHeader="true" title="表格面板"
+     onmouseup="return datagrid1_onmouseup()">
+    <div property="columns">
+        <div field="userId" width="120" headerAlign="center" allowSort="true">ID</div>
+        <div field="userName" width="120" headerAlign="center" allowSort="true">姓名</div>
+        <div field="userPassword" width="100" align="center" headerAlign="center">密码</div>
+        <div field="userEmail" numberFormat="¥#,0.00" align="right" width="100" allowSort="true">邮箱</div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    mini.parse();
+
+    var grid = mini.get("datagrid1");
+
+    grid.load();
+
+    var menu = new ColumnsMenu(grid);
+
+    function datagrid1_onmouseup() {
+
+    }
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link th:href="@{/js/jquery-1.11.3.min.js}" rel="stylesheet"/>
+    <link th:href="@{/boot.js}" rel="stylesheet">
+
+</head>
+<body>
+
+<h2>Hello World!</h2>
+<p th:text="${user.userId}"></p>
+<p th:text="${user.userName}"></p>
+<p th:text="${user.userPassword}"></p>
+<p th:text="${user.userEmail}"></p>
+
+
+
+
+
+
+<!--<script type="text/javascript">
+
+    mini.parse();
+
+    var grid = mini.get("datagrid1");
+
+    grid.load();
+
+    var menu = new ColumnsMenu(grid);
+
+    function search() {
+        var key = document.getElementById("key").value;
+        grid.load({ key: key});
+    }
+    $("#key").bind("keydown", function (e) {
+        if (e.keyCode == 13) {
+            search();
+        }
+    });
+    ///////////////////////////////////////////////////////
+    var Genders = [{ id: 1, text: '男' }, { id: 2, text: '女'}];
+    function onGenderRenderer(e) {
+        for (var i = 0, l = Genders.length; i < l; i++) {
+            var g = Genders[i];
+            if (g.id == e.value) return g.text;
+        }
+        return "";
+    }
+    function datagrid1_onmouseup() {
+
+    }
+
+</script>-->
+</body>
+</html>
